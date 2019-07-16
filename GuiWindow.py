@@ -49,10 +49,10 @@ class GuiWindow(QMainWindow):
 
     def clicked(self):
         cityInput = self.inputCity.text()
-        api = ApiHandler(str(cityInput))
-        api.request()
-        self.labelTempShow.setText(str(round(api.temp - 273.15)))
-        self.labelTempMinShow.setText(str(round(api.tempMin - 273.15)))
-        self.labelTempMaxShow.setText(str(round(api.tempMax - 273.15)))
-        self.labelWeatherDescriptionShow.setText(str(api.weatherDescription))
+        apiHandler = ApiHandler(str(cityInput))
+        apiHandler.request()
+        self.labelTempShow.setText(str(round(apiHandler.temp - 273.15)))
+        self.labelTempMinShow.setText(str(round(apiHandler.tempMin - 273.15)))
+        self.labelTempMaxShow.setText(str(round(apiHandler.tempMax - 273.15)))
+        self.labelWeatherDescriptionShow.setText(str(apiHandler.weatherDescription))
 
