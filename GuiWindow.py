@@ -48,11 +48,11 @@ class GuiWindow(QMainWindow):
         self.inputCity.move(50, 100)
 
     def clicked(self):
-        halo2 = self.inputCity.text()
-        halo = ApiHandler(str(halo2))
-        halo.request()
-        self.labelTempShow.setText(str(round(halo.temp - 273.15)))
-        self.labelTempMinShow.setText(str(round(halo.tempMin - 273.15)))
-        self.labelTempMaxShow.setText(str(round(halo.tempMax - 273.15)))
-        self.labelWeatherDescriptionShow.setText(str(halo.weatherDescription))
+        cityInput = self.inputCity.text()
+        api = ApiHandler(str(cityInput))
+        api.request()
+        self.labelTempShow.setText(str(round(api.temp - 273.15)))
+        self.labelTempMinShow.setText(str(round(api.tempMin - 273.15)))
+        self.labelTempMaxShow.setText(str(round(api.tempMax - 273.15)))
+        self.labelWeatherDescriptionShow.setText(str(api.weatherDescription))
 
